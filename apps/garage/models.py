@@ -10,8 +10,18 @@ class Garage(models.Model):
     url = models.URLField(blank=True, null=True)
     asking_price = models.FloatField(blank=True, null=True)
     purchase_price = models.FloatField(blank=True, null=True)
-    purchase_tax = models.ForeignKey(Tax, on_delete=models.SET_NULL, null=True)
-    rent_tax = models.ForeignKey(Tax, on_delete=models.SET_NULL, null=True)
+    purchase_tax = models.ForeignKey(
+        Tax,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="+",
+    )
+    rent_tax = models.ForeignKey(
+        Tax,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="+",
+    )
     expected_rent = models.FloatField(blank=True, null=True, default=0)
     actual_rent = models.FloatField(blank=True, null=True, default=0)
     width = models.FloatField(blank=True, null=True, default=0)
