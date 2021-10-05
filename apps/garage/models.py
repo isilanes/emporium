@@ -34,7 +34,7 @@ class Garage(models.Model):
         return self.purchase_tax.percent * self.purchase_price / 100.
 
     @property
-    def net_sale_cost(self) -> float:
+    def net_purchase_cost(self) -> float:
         return self.purchase_price + settings.NOTARY_FEE + self.purchase_taxes
 
     @property
@@ -49,14 +49,26 @@ class Garage(models.Model):
         return settings.YEARLY_AGENCY_FEE + self.community + self.ibi + 12 * self.monthly_rent_taxes
 
     @property
-    def net_yearly_revenue(self):
+    def net_yearly_income(self) -> float:
+        """Before taxes."""
+
         rent = self.actual_rent or self.expected_rent
 
         return 12. * rent - self.yearly_expenses
 
     @property
+    def yearly_taxes(self) -> float:
+        return self.net_yearly_income * settings.IRPF_PERCENT / 100.
+
+    @property
+    def net_yearly_revenue(self) -> float:
+        """After taxes."""
+
+        return self.net_yearly_income - self.yearly_taxes
+
+    @property
     def net_yearly_revenue_percent(self) -> float:
-        return 100. * self.net_yearly_revenue / self.net_sale_cost
+        return 100. * self.net_yearly_revenue / self.net_purchase_cost
 
     def __str__(self) -> str:
         return f"{self.address}: {self.number}"
