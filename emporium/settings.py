@@ -125,3 +125,5 @@ STATICFILES_DIRS = []  # leave empty if static files only within apps (automatic
 
 # Other:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+NOTARY_FEE = 200  # guess
+YEARLY_AGENCY_FEE = 120  # guess
