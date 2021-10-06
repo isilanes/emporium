@@ -1,5 +1,6 @@
 from django.db import models
 
+from apps.real_estate.models import RealEstate
 from emporium import settings
 from apps.tax.models import Tax
 
@@ -28,6 +29,11 @@ class Garage(models.Model):
     length = models.FloatField(blank=True, null=True, default=0)
     community = models.FloatField(blank=True, null=True, default=0)
     ibi = models.FloatField(blank=True, null=True, default=0)
+    real_estate = models.ForeignKey(
+        RealEstate,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
 
     @property
     def purchase_taxes(self) -> float:
