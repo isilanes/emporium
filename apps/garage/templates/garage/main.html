@@ -3,4 +3,9 @@
 {% load static %}
 
 {% block body %}
+<ul>
+{% for garage in garages %}
+    <li>{{garage.address}} #{{garage.number}}: {{garage.net_yearly_revenue_percent|floatformat:2}} %</li>
+{% endfor %}
+</ul>
 {% endblock %}

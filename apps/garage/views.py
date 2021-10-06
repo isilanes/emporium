@@ -7,6 +7,10 @@ from .models import Garage
 @login_required
 def main(request):
 
-    context = {}
+    garages = Garage.objects.all()
+
+    context = {
+        "garages": garages,
+    }
 
     return render(request, "garage/main.html", context)
