@@ -1,0 +1,11 @@
+div.banner {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: center;
+    padding: 5px 0px;
+    text-align: center;
+    font-size: x-large;
+    border-radius: 0px;
+    background: #6688ff;
+}

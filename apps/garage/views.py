@@ -10,6 +10,7 @@ def main(request):
     garages = Garage.objects.all()
 
     context = {
+        "banner": "Garajes",
         "garages": garages,
     }
 

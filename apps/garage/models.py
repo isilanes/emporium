@@ -36,12 +36,16 @@ class Garage(models.Model):
     )
 
     @property
+    def price(self):
+        return self.purchase_price or self.asking_price or 0
+
+    @property
     def purchase_taxes(self) -> float:
-        return self.purchase_tax.percent * self.purchase_price / 100.
+        return self.purchase_tax.percent * self.price / 100.
 
     @property
     def net_purchase_cost(self) -> float:
-        return self.purchase_price + settings.NOTARY_FEE + self.purchase_taxes
+        return self.price + settings.NOTARY_FEE + self.purchase_taxes
 
     @property
     def monthly_rent_taxes(self) -> float:
