@@ -10,29 +10,12 @@
     <div class="main-table-grid-head">Precio</div>
     <div class="main-table-grid-head">Alquiler</div>
     <div class="main-table-grid-head">Beneficio anual</div>
-{% for garage in garages %}
-    <div>{{garage.address}}</div>
-    <div>xxx : {{garage.number}}</div>
-    <div>{{garage.real_estate}}</div>
-    <div>{{garage.asking_price}}</div>
-    <div>{{garage.expected_rent}}</div>
-    <div>{{garage.net_yearly_revenue_percent|floatformat:2}} %</div>
-{% endfor %}
-</div>
-
-<div class="main-table-grid mt-3 w-75">
-    <div class="main-table-grid-head">Dirección</div>
-    <div class="main-table-grid-head">Planta y número</div>
-    <div class="main-table-grid-head">Inmobiliaria</div>
-    <div class="main-table-grid-head">Precio</div>
-    <div class="main-table-grid-head">Alquiler</div>
-    <div class="main-table-grid-head">Beneficio anual</div>
     {% for garage in data %}
         <div>{{garage.address}}</div>
         <div>yyy : {{garage.number}}</div>
-        <div>{{garage.real_estate}}</div>
-        <div>{{garage.asking_price}}</div>
-        <div>{{garage.expected_rent}}</div>
+        <div>{{garage.real_estate.name}}</div>
+        <div>{{garage.price}}</div>
+        <div>{{garage.rent}}</div>
         <div>{{garage.net_yearly_revenue_percent|floatformat:2}} %</div>
     {% endfor %}
 </div>

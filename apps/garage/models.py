@@ -5,8 +5,22 @@ from emporium import settings
 from apps.tax.models import Tax
 
 
-class Garage(models.Model):
+class Parking(models.Model):
+    """
+    A Parking is a location with maybe multiple parking spots. A Garage is one such spot.
+    """
     address = models.CharField('Address', max_length=100)
+
+    def __str__(self):
+        return self.address
+
+
+class Garage(models.Model):
+    """
+    A Parking is a location with maybe multiple parking spots. A Garage is one such spot.
+    """
+    parking = models.ForeignKey(Parking, on_delete=models.CASCADE, null=True)
+    floor = models.SmallIntegerField("Floor", blank=True, null=True)
     number = models.CharField('Number', max_length=50)
     url = models.URLField(blank=True, null=True)
     asking_price = models.FloatField(blank=True, null=True)
@@ -81,4 +95,8 @@ class Garage(models.Model):
         return 100. * self.net_yearly_revenue / self.net_purchase_cost
 
     def __str__(self) -> str:
-        return f"{self.address}: {self.number}"
+        address = getattr(self.parking, "address", "No address")
+
+        return f"{address} {self.floor}:{self.number}"
+
+

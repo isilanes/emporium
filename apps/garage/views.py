@@ -17,11 +17,8 @@ def main(request):
     if response.status_code == status.HTTP_200_OK:
         data = response.json()
 
-    garages = Garage.objects.all()
-
     context = {
         "banner": "Garajes",
-        "garages": garages,
         "data": data,
     }
 
