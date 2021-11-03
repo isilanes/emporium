@@ -13,9 +13,12 @@ def main(request):
     url = f"http://{request.get_host()}/api/garage/garage/"
     response = requests.get(url)
 
-    data = {}
+    data = []
     if response.status_code == status.HTTP_200_OK:
         data = response.json()
+
+    data = sorted([(d.get("net_yearly_revenue_percent", 0), d.get("id"), d) for d in data], reverse=True)
+    data = [d for (_, _, d) in data]
 
     context = {
         "banner": "Garajes",

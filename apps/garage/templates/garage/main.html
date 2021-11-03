@@ -12,11 +12,14 @@
     <div class="main-table-grid-head">Beneficio anual</div>
     {% for garage in data %}
         <div>{{garage.address}}</div>
-        <div>yyy : {{garage.number}}</div>
+        <div>{{garage.floor}} : {{garage.number}}</div>
         <div>{{garage.real_estate.name}}</div>
         <div>{{garage.price}}</div>
         <div>{{garage.rent}}</div>
-        <div>{{garage.net_yearly_revenue_percent|floatformat:2}} %</div>
+        <div>
+            {{garage.net_yearly_revenue|floatformat:2}}
+            ({{garage.net_yearly_revenue_percent|floatformat:2}} %)
+        </div>
     {% endfor %}
 </div>
 

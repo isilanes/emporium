@@ -19,7 +19,9 @@ class GarageSerializer(serializers.ModelSerializer):
             "real_estate",
             "price",
             "rent",
+            "net_yearly_revenue",
             "net_yearly_revenue_percent",
+            "floor",
         )
 
     @staticmethod

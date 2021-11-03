@@ -50,7 +50,7 @@ class Garage(models.Model):
     )
 
     @property
-    def price(self):
+    def price(self) -> float:
         return self.purchase_price or self.asking_price or 0
 
     @property
@@ -64,9 +64,8 @@ class Garage(models.Model):
     @property
     def monthly_rent_taxes(self) -> float:
         rent = self.actual_rent or self.expected_rent
-        taxes = self.rent_tax.percent
 
-        return rent * (1. - 1./(1. + taxes/100.))
+        return rent * self.rent_tax.tax_fraction
 
     @property
     def yearly_expenses(self) -> float:
@@ -74,8 +73,9 @@ class Garage(models.Model):
 
     @property
     def net_yearly_income(self) -> float:
-        """Before taxes."""
-
+        """
+        Before taxes.
+        """
         rent = self.actual_rent or self.expected_rent
 
         return 12. * rent - self.yearly_expenses
@@ -86,8 +86,9 @@ class Garage(models.Model):
 
     @property
     def net_yearly_revenue(self) -> float:
-        """After taxes."""
-
+        """
+        After taxes.
+        """
         return self.net_yearly_income - self.yearly_taxes
 
     @property
