@@ -8,11 +8,25 @@
     <div class="main-table-grid-head">Fecha inicio</div>
     <div class="main-table-grid-head">Fecha fin</div>
     <div class="main-table-grid-head">Status</div>
+    <div></div>
+    <div></div>
     {% for lease in data %}
         <div>{{lease.resident.name}}</div>
         <div>{{lease.start_date}}</div>
-        <div>{{garage.end_date}}</div>
-        <div>{{garage.status}}</div>
+        <div>
+            {% if lease.status == ongoing %}
+              -
+            {% else %}
+              {{lease.end_date}}
+            {% endif %}
+        </div>
+        {% if lease.status == ongoing %}
+            <div class="ongoing">ongoing</div>
+        {% else %}
+            <div></div>
+        {% endif %}
+        <div></div>
+        <div></div>
     {% endfor %}
 </div>
 

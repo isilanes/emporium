@@ -11,6 +11,7 @@ urlpatterns = [
 
     # REST API interface:
     path('api/garage/', include('apps.garage.api.urls', namespace="api-garage")),
+    path('api/leases/', include('apps.leases.api.urls', namespace="api-leases")),
 ]
 
 for app in settings.EXTRA_APPS:
