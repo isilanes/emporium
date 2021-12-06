@@ -1,0 +1,19 @@
+{% extends "leases/base/base_leases.html" %}
+
+{% load static %}
+
+{% block body %}
+<div class="main-table-grid mt-3 w-75">
+    <div class="main-table-grid-head">Arrendatario</div>
+    <div class="main-table-grid-head">Fecha inicio</div>
+    <div class="main-table-grid-head">Fecha fin</div>
+    <div class="main-table-grid-head">Status</div>
+    {% for lease in data %}
+        <div>{{lease.resident.name}}</div>
+        <div>{{lease.start_date}}</div>
+        <div>{{garage.end_date}}</div>
+        <div>{{garage.status}}</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

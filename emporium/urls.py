@@ -4,7 +4,7 @@ from django.urls import path, include
 from . import settings
 
 urlpatterns = [
-    path("", include("apps.garage.urls", namespace="garage")),
+    path("", include("apps.garage.urls", namespace="main")),
 
     # Admin interface:
     path('admin/', admin.site.urls),
