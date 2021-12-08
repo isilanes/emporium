@@ -1,0 +1,9 @@
+{% load static %}
+
+<div class="btn-group mr-2 ml-2" role="group">
+    {% if user.is_authenticated %}
+    <a class="btn btn-success">{{user.username}}</a>
+    {% else %}
+    <a class="btn btn-danger">Log in</a>
+    {% endif %}
+</div>

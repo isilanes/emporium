@@ -23,6 +23,7 @@ def main(request):
 
     context = {
         "banner": "Contratos",
+        "leases_active": True,
         "data": data,
         "ongoing": Lease.STATUS_ONGOING,
     }

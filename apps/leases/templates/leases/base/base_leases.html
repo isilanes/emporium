@@ -9,5 +9,17 @@
 {% endblock %}
 
 {% block extra_head %}
-<link rel="stylesheet" type="text/css" href="{% static 'garage/css/garage.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'leases/css/leases.css' %}" />
+{% endblock %}
+
+{% block top_left %}
+{% include "top_left_menu.html" %}
+{% endblock %}
+
+{% block top_middle %}
+<div></div>
+{% endblock %}
+
+{% block top_right %}
+{% include "top_user_menu.html" %}
 {% endblock %}

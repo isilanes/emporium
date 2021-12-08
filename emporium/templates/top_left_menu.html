@@ -1,0 +1,9 @@
+{% load static %}
+
+<div class="btn-group" role="group">
+    <a class="btn {% if garage_active %} btn-primary {% else %} btn-secondary {% endif %}"
+       href="{% url 'garage:main' %}">Garages</a>
+
+    <a class="btn {% if leases_active %} btn-primary {% else %} btn-secondary {% endif %}"
+       href="{% url 'leases:main' %}">Leases</a>
+</div>

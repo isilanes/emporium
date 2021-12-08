@@ -20,6 +20,7 @@ def main(request):
 
     context = {
         "banner": "Garajes",
+        "garage_active": True,
         "data": data,
     }
 

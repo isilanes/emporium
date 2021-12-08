@@ -1,1 +1,12 @@
 @import 'elements/banners.css';
+
+.top-menu-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr auto;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 0px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
