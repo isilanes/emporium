@@ -1,0 +1,11 @@
+.main-table-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    grid-gap: 5px;
+}
+
+.main-table-grid-head {
+    font-weight: bold;
+    color: #2222cc;
+}
