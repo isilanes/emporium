@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from apps.leases.models import Lease
+from apps.leases.models import Lease, LeaseTemplate
 from apps.garage.api.serializers import GarageSerializer
 from apps.people.api.serializers import PersonSerializer
 
@@ -30,3 +30,14 @@ class LeaseSerializer(serializers.ModelSerializer):
             return Lease.STATUS_ONGOING
 
         return Lease.STATUS_FINISHED
+
+
+class LeaseTemplateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = LeaseTemplate
+        fields = (
+            "id",
+            "comment",
+            "path",
+        )
