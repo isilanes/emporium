@@ -130,6 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 NOTARY_FEE = 200  # guess
 YEARLY_AGENCY_FEE = 120  # guess
 IRPF_PERCENT = 30  # guess
+MEDIA_ROOT = "media"
 
 # DRF:
 REST_FRAMEWORK = {

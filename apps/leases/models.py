@@ -19,3 +19,14 @@ class Lease(models.Model):
 
     def __str__(self):
         return f"{self.resident} @ {self.garage}"
+
+
+class LeaseTemplate(models.Model):
+    """
+    LaTeX template to generate a Lease PDF.
+    """
+    comment = models.CharField(max_length=100)
+    path = models.FileField(upload_to="leases/templates")
+
+    def __str__(self):
+        return self.comment
