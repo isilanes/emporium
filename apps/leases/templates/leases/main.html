@@ -31,7 +31,9 @@
 
 <div class="lease-table-grid mt-3 w-50" id="add_lease" style="display: none;">
     <div class="lease-table-grid-head">Plantilla</div>
-    <div style="grid-column: 2 / span 3"></div>
+    <div class="lease-table-grid-head">Arrendador</div>
+    <div class="lease-table-grid-head">Arrendatario</div>
+    <div style="grid-column: 4 / span 1"></div>
 
     <div>
     <select class="form-select" name="latex-template" id="latex-template">
@@ -39,6 +41,20 @@
             <option value="{{template.0}}">{{template.1}}</option>
         {% endfor %}
     </select>
+    </div>
+    <div>
+        <select class="form-select" name="owner" id="owner">
+            {% for owner in people %}
+            <option value="{{owner.0}}">{{owner.1}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <select class="form-select" name="resident" id="resident">
+            {% for resident in people %}
+            <option value="{{resident.0}}">{{resident.1}}</option>
+            {% endfor %}
+        </select>
     </div>
 </div>
 
