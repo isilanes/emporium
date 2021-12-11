@@ -8,3 +8,9 @@ function mytoggle(id) {
         x.style.display = "none";
     }
 };
+
+function show_create_lease() {
+    mytoggle('add-lease');
+    mytoggle('new-button');
+    mytoggle('create-buttons');
+};
