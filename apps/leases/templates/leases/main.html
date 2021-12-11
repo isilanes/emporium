@@ -35,11 +35,11 @@
 <div class="lease-table-grid mt-3 w-50" id="create-buttons" style="display: none;">
     <div class="ml-2 mt-3 mr-2">
         <button class="btn btn-warning" onclick="show_create_lease()">Cancel</button>
-        <button class="btn btn-success" onclick="show_create_lease()">Save</button>
+        <button class="btn btn-success" onclick="create_lease('{{ csrf_token }}')">Create</button>
     </div>
 </div>
 
-<div class="lease-table-grid mt-3 w-50" id="add-lease" style="display: none;">
+<div class="lease-table-grid mt-3 w-75" id="add-lease" style="display: none;">
     <div class="lease-table-grid-head">Plantilla</div>
     <div class="lease-table-grid-head">Arrendador</div>
     <div class="lease-table-grid-head">Arrendatario</div>
