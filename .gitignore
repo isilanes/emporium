@@ -3,5 +3,5 @@
 .idea
 utils/latex
 media/
-.static
+static/
 *.sqlite3
