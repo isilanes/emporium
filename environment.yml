@@ -2,14 +2,15 @@ name: emporium
 channels:
   - defaults
 dependencies:
-  - python=3.9.7
+  - python=3.10
   - coverage=5.5
   - flake8=3.9.2
   - psycopg2=2.8.6
-  - requests=2.26.0
   - pip=21.2.4
   - pip:
       - radon==5.1.0
       - django==3.2.7
       - whitenoise==5.3.0
       - djangorestframework==3.12.4
+      - requests==2.27
+      - dj_database_url
